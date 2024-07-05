@@ -12,10 +12,11 @@
             font-family: Arial, sans-serif;
             padding: 20px;
             display: flex;
+            flex-direction: column; /* Add flex-direction: column; */
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
+            height: auto; /* Remove the height: 100vh; */
+            overflow: auto; /* Add overflow: auto; */
             position: relative;
         }
 
@@ -25,8 +26,8 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             text-align: center;
-            max-width: 400px;
-            margin: 0 auto;
+            max-width: 90%; /* Adjust the max-width for smaller screens */
+            margin: 20px auto; /* Add margin for spacing */
         }
 
         .person-box, .join-button {
@@ -54,12 +55,10 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             text-align: center;
-            max-width: 400px;
-            margin: 20px auto;
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
+            max-width: 90%; /* Adjust the max-width for smaller screens */
+            margin: 20px auto; /* Add margin for spacing */
+            position: static; /* Remove the absolute positioning */
+            transform: none; /* Remove the transform */
         }
 
         @keyframes gradient {
@@ -80,11 +79,15 @@
             margin-bottom: 20px;
         }
 
-        /* Add new styles for the following image */
-        .cursor-img {
-            position: absolute;
-            pointer-events: none;
-            z-index: 9999;
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px; /* Adjust the font size for smaller screens */
+            }
+
+            .person-box {
+                display: block; /* Display person boxes as block elements */
+                margin: 10px auto; /* Add margin for spacing */
+            }
         }
     </style>
 </head>
@@ -97,7 +100,7 @@
         </div>
         <div>
             <h2>What I'm working on</h2>
-            <p>I sometimes make Discord bots, although I'm not very good at it. I tend to try my best</p>
+            <p>I sometimes make Discord bots, although I'm not very good at it. I tend to try my best </p>
         </div>
         <div>
             <h2>Find me on</h2>
@@ -122,18 +125,7 @@
         <a href="https://discord.gg/JtdD7HWXGV" class="join-button" style="background-color: #0000ff;" title="My Discord Server">Join Now</a>
     </div>
 
-    <!-- Add the following image element for the cursor image with URL -->
-    <img class="cursor-img" src="https://cdn.discordapp.com/emojis/1113145869492035684.gif?size=48&quality=lossless&name=foxspin" alt="Cursor Image">
-
     <script>
-        // JavaScript code for cursor image following cursor movement
-        const cursorImg = document.querySelector('.cursor-img');
-
-        document.addEventListener('mousemove', (e) => {
-            cursorImg.style.left = e.pageX + 'px';
-            cursorImg.style.top = e.pageY + 'px';
-        });
-
         document.getElementById('Corey').addEventListener('click', function() {
             window.location.href = 'https://discord.gg/e9pYehywn5';
         });
