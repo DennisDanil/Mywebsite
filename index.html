@@ -5,19 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dennis_Danil</title>
     <style>
-        body {
-            background-image: linear-gradient(to right, orange, purple, teal);
-            background-size: cover;
+        body.wave {
+            background: linear-gradient(90deg, orange, purple, teal);
+            background-size: 400% 400%;
+            animation: wave 10s ease infinite;
             color: white;
             font-family: Arial, sans-serif;
             padding: 20px;
             display: flex;
-            flex-direction: column; /* Add flex-direction: column; */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: auto; /* Remove the height: 100vh; */
-            overflow: auto; /* Add overflow: auto; */
+            height: auto;
+            overflow: auto;
             position: relative;
+        }
+
+        @keyframes wave {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .profile-content {
@@ -26,8 +39,8 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             text-align: center;
-            max-width: 90%; /* Adjust the max-width for smaller screens */
-            margin: 20px auto; /* Add margin for spacing */
+            max-width: 90%;
+            margin: 20px auto;
         }
 
         .person-box, .join-button {
@@ -55,10 +68,10 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             text-align: center;
-            max-width: 90%; /* Adjust the max-width for smaller screens */
-            margin: 20px auto; /* Add margin for spacing */
-            position: static; /* Remove the absolute positioning */
-            transform: none; /* Remove the transform */
+            max-width: 90%;
+            margin: 20px auto;
+            position: static;
+            transform: none;
         }
 
         @keyframes gradient {
@@ -81,17 +94,17 @@
 
         @media (max-width: 480px) {
             body {
-                font-size: 14px; /* Adjust the font size for smaller screens */
+                font-size: 14px;
             }
 
             .person-box {
-                display: block; /* Display person boxes as block elements */
-                margin: 10px auto; /* Add margin for spacing */
+                display: block;
+                margin: 10px auto;
             }
         }
     </style>
 </head>
-<body>
+<body class="wave">
     <div class="profile-content">
         <h1>Hey, I'm Dennis_Danil</h1>
         <div>
