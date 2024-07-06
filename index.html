@@ -92,6 +92,12 @@
             margin-bottom: 20px;
         }
 
+        .cursor-img {
+            position: absolute;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
         @media (max-width: 480px) {
             body {
                 font-size: 14px;
@@ -138,7 +144,18 @@
         <a href="https://discord.gg/JtdD7HWXGV" class="join-button" style="background-color: #0000ff;" title="My Discord Server">Join Now</a>
     </div>
 
+    <!-- Add the following image element for the cursor image with URL -->
+    <img class="cursor-img" src="https://cdn.discordapp.com/emojis/1113145869492035684.gif?size=48&quality=lossless&name=foxspin" alt="Cursor Image">
+
     <script>
+        // JavaScript code for cursor image following cursor movement
+        const cursorImg = document.querySelector('.cursor-img');
+
+        document.addEventListener('mousemove', (e) => {
+            cursorImg.style.left = e.pageX + 'px';
+            cursorImg.style.top = e.pageY + 'px';
+        });
+
         document.getElementById('Corey').addEventListener('click', function() {
             window.location.href = 'https://discord.gg/e9pYehywn5';
         });
