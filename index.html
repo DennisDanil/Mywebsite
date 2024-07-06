@@ -19,6 +19,7 @@
             height: auto;
             overflow: auto;
             position: relative;
+            cursor: url('https://cdn.discordapp.com/emojis/1113145869492035684.gif?size=48&quality=lossless&name=foxspin'), auto;
         }
 
         @keyframes wave {
@@ -98,12 +99,6 @@
             margin-bottom: 20px;
         }
 
-        .cursor-img {
-            position: absolute;
-            pointer-events: none;
-            z-index: 9999;
-        }
-
         @media (max-width: 480px) {
             body {
                 font-size: 14px;
@@ -133,9 +128,10 @@
             <div>
                 <a href="https://www.youtube.com/channel/UCTny_qpQ41rFtKb2gy9EJaA" class="social-button" style="background-color: #FF0000;" title="YouTube"><img src="https://cdn.jsdelivr.net/npm/simple-icons@7.18.0/icons/youtube.svg" alt="YouTube"> YouTube</a>
                 <a href="https://psnprofiles.com/DennisDanil" class="social-button" style="background-color: #2e6db4;" title="PlayStation"><img src="https://cdn.jsdelivr.net/npm/simple-icons@7.18.0/icons/playstation.svg" alt="PlayStation"> PlayStation</a>
-                <a href="https://www.twitch.tv/dennis_danil" class="social-button" style="background-color:  #6441a4;" title="Twitch"><img src="https://cdn.jsdelivr.net/npm/simple-icons@7.18.0/icons/twitch.svg" alt="Twitch"> Twitch</a>
+                <a href="" class="social-button" style="background-color:  #6441a4;" title="Twitch"><img src="https://cdn.jsdelivr.net/npm/simple-icons@7.18.0/icons/twitch.svg" alt="Twitch"> Twitch</a>
                 <a href="https://www.xbox.com/en-US/play/user/Dennis%20Danil" class="social-button" style="background-color: #107c10;" title="Xbox"><img src="https://cdn.jsdelivr.net/npm/simple-icons@7.18.0/icons/xbox.svg" alt="Xbox"> Xbox</a>
                 <a href="https://www.twitch.tv/dennis_danil" class="social-button" style="background-color: #1DB954;" title="Spotify"><img src="https://cdn.jsdelivr.net/npm/simple-icons@7.18.0/icons/spotify.svg" alt="Spotify"> Spotify</a>
+                <a href="https://cash.app/$DennisDanilWintrich" class="social-button" style="background-color: 	#00CF31;" title="CashApp"><img src="https://cdn.jsdelivr.net/npm/simple-icons@7.18.0/icons/cashapp.svg" alt="CashApp"> CashApp</a>
             </div>
         </div>
         <div>
@@ -157,18 +153,7 @@
         <a href="https://discord.gg/JtdD7HWXGV" class="join-button" style="background-color: #0000ff;" title="My Discord Server">Join Now</a>
     </div>
 
-    <!-- Add the following image element for the cursor image with URL -->
-    <img class="cursor-img" src="https://cdn.discordapp.com/emojis/1113145869492035684.gif?size=48&quality=lossless&name=foxspin" alt="Cursor Image">
-
     <script>
-        // JavaScript code for cursor image following cursor movement
-        const cursorImg = document.querySelector('.cursor-img');
-
-        document.addEventListener('mousemove', (e) => {
-            cursorImg.style.left = e.pageX + 'px';
-            cursorImg.style.top = e.pageY + 'px';
-        });
-
         document.getElementById('Corey').addEventListener('click', function() {
             window.location.href = 'https://discord.gg/e9pYehywn5';
         });
