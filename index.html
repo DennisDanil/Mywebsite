@@ -99,6 +99,16 @@
             margin-bottom: 20px;
         }
 
+        .web-ui {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 90%;
+            margin: 20px auto;
+        }
+
         @media (max-width: 480px) {
             body {
                 font-size: 14px;
@@ -132,6 +142,7 @@
                 <a href="https://www.xbox.com/en-US/play/user/Dennis%20Danil" class="social-button" style="background-color: #107c10;" title="Xbox"><img src="https://cdn.jsdelivr.net/npm/simple-icons@7.18.0/icons/xbox.svg" alt="Xbox"> Xbox</a>
                 <a href="https://www.twitch.tv/dennis_danil" class="social-button" style="background-color: #1DB954;" title="Spotify"><img src="https://cdn.jsdelivr.net/npm/simple-icons@7.18.0/icons/spotify.svg" alt="Spotify"> Spotify</a>
                 <a href="https://cash.app/$DennisDanilWintrich" class="social-button" style="background-color: 	#00CF31;" title="CashApp"><img src="https://cdn.jsdelivr.net/npm/simple-icons@7.18.0/icons/cashapp.svg" alt="CashApp"> CashApp</a>
+                <a href="https://www.instagram.com/dennis_danli/" class="social-button" style="background-color: #E1306C;" title="Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@7.18.0/icons/instagram.svg" alt="Instagram"> Instagram</a>
             </div>
         </div>
         <div>
@@ -152,23 +163,45 @@
         <img class="discord-img" src="https://media.discordapp.net/stickers/995721983067172924.png?size=160&name=Bucket" alt="Discord Server Image">
         <a href="https://discord.gg/JtdD7HWXGV" class="join-button" style="background-color: #0000ff;" title="My Discord Server">Join Now</a>
     </div>
+    <div class="web-ui">
+        <h2>Web Browser</h2>
+        <input type="text" id="searchInput" placeholder="Enter Discord Invite Link">
+        <button id="redirectButton">Open in New Window</button>
+    </div>
 
     <script>
         document.getElementById('Corey').addEventListener('click', function() {
-            window.location.href = 'https://discord.gg/e9pYehywn5';
+            openInNewWindow('https://discord.gg/e9pYehywn5');
         });
 
         document.getElementById('Shua').addEventListener('click', function() {
-            window.location.href = 'https://discord.gg/R9Ynf8W6N6';
+            openInNewWindow('https://discord.gg/R9Ynf8W6N6');
         });
 
         document.getElementById('Jaye-Waye').addEventListener('click', function() {
-            window.location.href = 'https://discord.gg/92JQHNXqBF';
+            openInNewWindow('https://discord.gg/92JQHNXqBF');
         });
 
         document.getElementById('Diaphobic').addEventListener('click', function() {
             window.location.href = 'https://www.instagram.com/diaphobi.c?igsh=YTQwZjQ0NmI0OA==';
         });
+
+        const searchInput = document.getElementById('searchInput');
+        const redirectButton = document.getElementById('redirectButton');
+
+        redirectButton.addEventListener('click', function() {
+            const discordInviteLink = searchInput.value;
+            if (discordInviteLink.startsWith('https://discord.gg/')) {
+                openInNewWindow(discordInviteLink);
+            } else {
+                alert('Please enter a valid Discord invite link.');
+            }
+        });
+
+        function openInNewWindow(url) {
+            const duckduckgoUrl = `https://duckduckgo.com/?q=${encodeURIComponent(url)}`;
+            window.open(duckduckgoUrl, '_blank');
+        }
     </script>
 </body>
 </html>
